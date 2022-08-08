@@ -1,0 +1,56 @@
+:root {
+    --pixel-size: 11;
+}
+
+body {
+    background: #81BF97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.pixelart {
+    image-rendering: pixelated;
+}
+
+.face-right {
+    top: calc(-32px * var(--pixel-size));
+}
+
+.face-up {
+    top: calc(-64px * var(--pixel-size));
+}
+
+.face-left {
+    top: calc(-96px * var(--pixel-size));
+}
+
+.character {
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+}
+
+.character_spritesheet {
+    animation: moveSpriteSheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+    position: absolute;
+}
+
+.character_shadow {
+    position: absolute;
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+}
+
+@keyframes moveSpriteSheet {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
